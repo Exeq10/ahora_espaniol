@@ -9,15 +9,29 @@ export default function Landing() {
 
       <main>
         <section className="relative h-[500px] overflow-hidden m-8 rounded-3xl">
-          <img src="/placeholder.svg?height=500&width=1200" alt="Students studying" className="w-full h-full object-cover" />
+          <img src="../public/Rectangle 2.png" alt="Students studying" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-            <div className="text-center text-white max-w-4xl px-4">
-              <h1 className="font-londrina-solid font-black text-5xl mb-4">If you're looking to immerse yourself in Argentine culture while learning Spanish, Ahora Español in Mar del Plata is the ideal place</h1>
-              <p className="mb-6 text-lg">Located in one of Argentina's most vibrant coastal cities, Ahora Español offers a unique blend of language learning and cultural immersion. Our experienced native teachers and interactive methods ensure you'll make rapid progress in your Spanish skills while enjoying the rich Argentine lifestyle.</p>
-              <button className="bg-[#43B3AF] text-white px-8 py-3 rounded-full hover:bg-[#3A9E9A] font-semibold text-lg">
-                Start now!
-              </button>
-            </div>
+
+            
+<div className="flex max-w-4xl mx-auto px-4 py-8">
+  <div className="flex-2/3 text-center text-white">
+    <h1 className="font-londrina-solid font-black text-5xl mb-4">
+      If you're looking to immerse yourself in Argentine culture while learning Spanish, Ahora Español in Mar del Plata is the ideal place
+    </h1>
+    <p className="mb-6 text-lg">
+      Located in one of Argentina's most vibrant coastal cities, Ahora Español offers a unique blend of language learning and cultural immersion. Our experienced native teachers and interactive methods ensure you'll make rapid progress in your Spanish skills while enjoying the rich Argentine lifestyle.
+    </p>
+    <button className="bg-[#43B3AF] text-white px-8 py-3 rounded-full hover:bg-[#3A9E9A] font-semibold text-lg">
+      Start now!
+    </button>
+  </div>
+    
+  <div className="flex-1/3">
+    <img src="../public/Group 1.png" alt="Descripción de la imagen" className="w-full h-auto rounded-lg"/>
+  </div>
+</div>
+
+            
           </div>
         </section>
 
@@ -51,10 +65,10 @@ export default function Landing() {
               </div>
             </div>
             <div className="grid grid-cols-4 gap-4 py-16">
-              <img src="/placeholder.svg?height=150&width=200" alt="School image 1" className="w-full h-40 object-cover rounded-lg" />
-              <img src="/placeholder.svg?height=150&width=200" alt="School image 2" className="w-full h-40 object-cover rounded-lg" />
-              <img src="/placeholder.svg?height=150&width=200" alt="School image 3" className="w-full h-40 object-cover rounded-lg" />
-              <img src="/placeholder.svg?height=150&width=200" alt="School image 4" className="w-full h-40 object-cover rounded-lg" />
+              <img src="../public/Rectangle 23.png" alt="School image 1" className="w-full h-40 object-cover rounded-lg" />
+              <img src="../public/Rectangle 24.png" alt="School image 2" className="w-full h-40 object-cover rounded-lg" />
+              <img src="../public/Rectangle 25.png" alt="School image 3" className="w-full h-40 object-cover rounded-lg" />
+              <img src="../public/Rectangle 5.png" alt="School image 4" className="w-full h-40 object-cover rounded-lg" />
             </div>
           </div>
           <div className="absolute -bottom-24 -left-24 w-48 h-48 bg-[#C1CA31] rounded-full opacity-50"></div>
@@ -65,13 +79,19 @@ export default function Landing() {
             <h2 className="font-londrina-solid font-black text-4xl mb-12">What we offer...</h2>
             <div className="grid md:grid-cols-3 gap-8">
               {[1, 2, 3].map((i) => (
-                <div key={i} className="bg-[#EAEAEA] border-[#43B3AF] border-2 rounded-lg shadow-lg p-6">
-                  <h3 className="font-londrina-solid font-black text-2xl text-center mb-4">Small group of classes</h3>
-                  <p className="text-gray-600 text-center mb-4">Max. 5 students per class with flexible schedules. 15 or 20 hours/week. Classes are held in the morning or afternoon.</p>
-                  <button className="bg-[#43B3AF] text-white px-4 py-2 rounded-full hover:bg-[#3A9E9A]">
-                    Learn more
-                  </button>
-                </div>
+<div key={i} className="bg-[#EAEAEA] border-[#43B3AF] border-2 rounded-lg shadow-lg p-6 relative">
+  <div className="absolute top-0 left-0 right-0 flex justify-center">
+    <img src="../public/Group.png" alt="Descripción de la imagen" className="w-16 h-16 object-cover rounded-full mt-[-2rem]" />
+  </div>
+  <div className="mt-12">
+    <h3 className="font-londrina-solid font-black text-2xl text-center mb-4">Small group of classes</h3>
+    <p className="text-gray-600 text-center mb-4">Max. 5 students per class with flexible schedules. 15 or 20 hours/week. Classes are held in the morning or afternoon.</p>
+    <button className="bg-[#43B3AF] text-white px-4 py-2 rounded-full hover:bg-[#3A9E9A]">
+      Learn more
+    </button>
+  </div>
+</div>
+
               ))}
             </div>
           </div>
@@ -82,7 +102,10 @@ export default function Landing() {
             <h2 className="font-londrina-solid font-black text-4xl text-right mb-12">We are in Mar del Plata</h2>
             <div className="grid md:grid-cols-4 gap-8">
                 <div>
-                  <img src="/placeholder.svg?" />
+                  <img src="../public/card mar del plata (1).png" />
+                  <img src="../public/card mar del plata (2).png" />
+                  <img src="../public/card mar del plata (3).png" />
+                  <img src="../public/card mar del plata .png" />
                 </div>
             </div>
           </div>
@@ -121,15 +144,16 @@ export default function Landing() {
           </div>
         </section>
 
-        <section className="py-16 bg-[#43B3AF]">
+        <section className="py-16 bg-[#A3DAD8]">
           <div className="container mx-auto px-4">
             <h2 className="font-londrina-solid font-black text-4xl text-center mb-12">Our students experiences</h2>
             <div className="grid md:grid-cols-4 gap-8">
               {[1, 2, 3, 4].map((i) => (
                 <div key={i} className="bg-white shadow-lg rounded-lg p-6">
+                  <img src="../public/Frame 13449.png" className="w-10 h-10 rounded-full mr-4" />
                   <p className="text-gray-600 mb-4">Soy Brasileño, y el Ahora Español fue mi primer contacto con el castellano! Me encantó la experiencia, los profesores y me ayudó mucho.</p>
                   <div className="flex items-center">
-                    <img src="/placeholder.svg?height=40&width=40" alt="Student" className="w-10 h-10 rounded-full mr-4" />
+                    <img src="../public/Frame 13444.png" alt="Student" className="w-10 h-10 rounded-full mr-4" />
                     <div>
                       <h4 className="font-semibold">Nombre usuario</h4>
                       <div className="flex text-yellow-400">
