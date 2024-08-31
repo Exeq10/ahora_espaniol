@@ -11,7 +11,7 @@ export default function Landing() {
         <div className="absolute -bottom-[1020px] -left-[160px] w-[540px] h-[540px] bg-[#C1CA31] rounded-full"></div>
         <div className="absolute -bottom-[1450px] -right-[240px] w-[540px] h-[540px] bg-[#C1CA31] rounded-full"></div>
         <section className="relative h-[500px] overflow-hidden m-8 rounded-3xl">
-          <img src="./public/Rectangle 2.png" alt="Students studying" className="w-full h-full object-cover" />
+          <img src="/Rectangle 2.png" alt="Students studying" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
             <div className="flex items-center justify-between mx-auto w-full">
               <div className="w-2/3 text-white text-center m-8">
@@ -26,7 +26,7 @@ export default function Landing() {
                 </button>
               </div>
               <div className="w-1/3">
-                <img src="../public/Group 1.png" className="object-contain" alt="Group Image" />
+                <img src="/Group 1.png" className="object-contain" alt="Group Image" />
               </div>
             </div>
           </div>
@@ -65,10 +65,10 @@ export default function Landing() {
               </div>
             </div>
             <div className="grid grid-cols-4 gap-4 pt-16">
-              <img src="../public/Rectangle 23.png" alt="School image 1" className="w-full h-40 object-cover rounded-lg" />
-              <img src="../public/Rectangle 24.png" alt="School image 2" className="w-full h-40 object-cover rounded-lg" />
-              <img src="../public/Rectangle 25.png" alt="School image 3" className="w-full h-40 object-cover rounded-lg" />
-              <img src="../public/Rectangle 5.png" alt="School image 4" className="w-full h-40 object-cover rounded-lg" />
+              <img src="/Rectangle 23.png" alt="School image 1" className="w-full h-40 object-cover rounded-lg" />
+              <img src="/Rectangle 24.png" alt="School image 2" className="w-full h-40 object-cover rounded-lg" />
+              <img src="/Rectangle 25.png" alt="School image 3" className="w-full h-40 object-cover rounded-lg" />
+              <img src="/Rectangle 5.png" alt="School image 4" className="w-full h-40 object-cover rounded-lg" />
             </div>
           </div>
         </section>
@@ -81,7 +81,7 @@ export default function Landing() {
                 <div key={i} className="bg-[#EAEAEA] border-[#43B3AF] border-2 rounded-lg shadow-lg p-6 relative">
                   <div className="absolute top-0 left-0 right-0 flex justify-center">
                     <div className="bg-[#43B3AF] rounded-full h-16 object-cover mt-[-2rem]">
-                      <img src="../public/Group.png" alt="Descripción de la imagen" className="w-16 p-2 mt-1" />
+                      <img src="/Group.png" alt="Descripción de la imagen" className="w-16 p-2 mt-1" />
                     </div>
                   </div>
                   <div className="mt-12 text-center">
@@ -104,10 +104,10 @@ export default function Landing() {
           <div className="container mx-auto px-4">
             <h2 className="font-londrina-solid font-black text-4xl text-right mb-12">We are in Mar del Plata</h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              <img src="../public/card mar del plata.png" alt="Mar del Plata 4" className="w-full object-cover" />
-              <img src="../public/card mar del plata (1).png" alt="Mar del Plata 1" className="w-full object-cover" />
-              <img src="../public/card mar del plata (2).png" alt="Mar del Plata 2" className="w-full object-cover" />
-              <img src="../public/card mar del plata (3).png" alt="Mar del Plata 3" className="w-full object-cover" />
+              <img src="/card mar del plata.png" alt="Mar del Plata 4" className="w-full object-cover" />
+              <img src="/card mar del plata (1).png" alt="Mar del Plata 1" className="w-full object-cover" />
+              <img src="/card mar del plata (2).png" alt="Mar del Plata 2" className="w-full object-cover" />
+              <img src="/card mar del plata (3).png" alt="Mar del Plata 3" className="w-full object-cover" />
             </div>
           </div>
         </section>
@@ -154,10 +154,10 @@ export default function Landing() {
             <div className="grid md:grid-cols-4 gap-8">
               {[1, 2, 3, 4].map((i) => (
                 <div key={i} className="bg-white shadow-lg rounded-lg p-6">
-                  <img src="../public/Frame 13449.png" alt="Quote" className="w-10 h-10 mb-4" />
+                  <img src="/Frame 13449.png" alt="Quote" className="w-10 h-10 mb-4" />
                   <p className="text-gray-600 mb-4">Soy Brasileño, y el Ahora Español fue mi primer contacto con el castellano! Me encantó la experiencia, los profesores y me ayudó mucho.</p>
                   <div className="flex items-center">
-                    <img src="../public/Frame 13444.png" alt="Student" className="w-10 h-10 rounded-full mr-4" />
+                    <img src="/Frame 13444.png" alt="Student" className="w-10 h-10 rounded-full mr-4" />
                     <div>
                       <h4 className="font-semibold">Nombre usuario</h4>
                       <div className="flex text-yellow-400">

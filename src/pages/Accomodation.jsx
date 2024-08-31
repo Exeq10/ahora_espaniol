@@ -8,7 +8,7 @@ export default function Accommodation() {
 
       <main>
         <section className="relative h-[300px] md:h-[400px] overflow-hidden">
-          <img src="../public/Rectangle 3.png?height=400&width=1200" alt="Mar del Plata coastline" className="w-full h-full object-cover" />
+          <img src="Rectangle 3.png?height=400&width=1200" alt="Mar del Plata coastline" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
             <h1 className="font-londrina-solid font-black text-3xl md:text-6xl text-center text-white px-4">Accomodation at Mar del Plata</h1>
           </div>
@@ -18,13 +18,13 @@ export default function Accommodation() {
           <div className="container mx-auto px-4">
             <div className="mb-8 md:mb-12">
               <div className="flex items-center mb-4">
-                <img src="../public/solar_plain-bold.png" className="mr-4" />
+                <img src="/solar_plain-bold.png" className="mr-4" />
                 <p className="text-base md:text-lg">
                   Living with local families offers a holistic language learning experience that combines linguistic immersion with cultural enrichment, making it an invaluable option for those seeking to improve their Spanish skills.
                 </p>
               </div>
               <div className="flex items-center mb-4">
-                <img src="../public/solar_plain-bold.png" className="mr-4" />
+                <img src="/solar_plain-bold.png" className="mr-4" />
                 <p className="text-base md:text-lg">
                   Constant exposure to the language in real-life situations accelerates your language learning process. You'll have ample opportunities to engage in conversations, ask questions, and receive feedback from native speakers, which can significantly improve your speaking skills. Conversing with your host family allows you to pick up colloquialisms, accents, and cultural nuances that you might not encounter in a classroom setting.
                 </p>
@@ -36,7 +36,7 @@ export default function Accommodation() {
         <section className="py-8 md:py-16 bg-[#B4E1DF] rounded-3xl">
           <div className="container mx-auto px-4">
             <h2 className="font-londrina-solid font-black text-2xl md:text-4xl mb-4 md:mb-8 flex items-center">
-              <img src="../public/icon house.png" className="mr-4" />
+              <img src="/icon house.png" className="mr-4" />
               Prices Homestays
             </h2>
             <div className="space-y-4">
@@ -78,7 +78,7 @@ export default function Accommodation() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
 
               <div className="relative">
-                <img src="../public/Rectangle 26.png" alt="Family experience" className="w-full h-auto" />
+                <img src="/Rectangle 26.png" alt="Family experience" className="w-full h-auto" />
                 <div className="absolute bottom-0 flex flex-col justify-center bg-[#C1CA31] rounded-b-3xl h-52">
                   <p className="text-white p-4 text-center">
                     Staying with a local family offers a unique cultural experience. You'll get firsthand insight into the daily lives, habits, customs, and traditions of the local community. This immersion can include participating in family activities, and celebrations, enjoying typical meals, and gaining a deeper understanding and appreciation of Argentinian culture.
@@ -87,7 +87,7 @@ export default function Accommodation() {
               </div>
 
               <div className="relative">
-                <img src="../public/Rectangle 26 (1).png" alt="Family experience" className="w-full h-auto" />
+                <img src="/Rectangle 26 (1).png" alt="Family experience" className="w-full h-auto" />
                 <div className="absolute bottom-0 flex flex-col justify-center bg-[#C1CA31] rounded-b-3xl h-52">
                   <p className="text-white p-4 text-center">
                     Host families often provide additional support and guidance, especially if you're new to the area. They can offer local tips on transportation and attractions, making your transition smoother and more enjoyable.
@@ -96,7 +96,7 @@ export default function Accommodation() {
               </div>
 
               <div className="relative">
-                <img src="../public/Rectangle 28.png" alt="Family experience" className="w-full h-auto" />
+                <img src="/Rectangle 28.png" alt="Family experience" className="w-full h-auto" />
                 <div className="absolute bottom-0 flex flex-col justify-center bg-[#C1CA31] rounded-b-3xl h-52">
                   <p className="text-white p-4 text-center">
                     Living with a local family allows you to savor authentic homemade meals, giving you a true taste of Argentine cuisine. This not only enhances your cultural experience but also provides an opportunity to expand your culinary horizons.
