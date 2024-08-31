@@ -3,7 +3,7 @@ export default function Nav() {
     return (
       <nav className="bg-[#F5F5F5] overflow-hidden shadow-lg">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <img src="../public/NavBar Logo.png" alt="Ahora Español Logo" className="h-20" />
+          <img src="/public/NavBar Logo.png" alt="Ahora Español Logo" className="h-20" />
           <div className="space-x-4">
             <Link to="/classes" className="text-gray-600 hover:text-gray-900 font-montserrat">Classes</Link>
             <Link to="/accomodation" className="text-gray-600 hover:text-gray-900 font-montserrat">Accomodation</Link>
