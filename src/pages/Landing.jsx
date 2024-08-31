@@ -11,7 +11,7 @@ export default function Landing() {
         <div className="absolute -bottom-[1020px] -left-[160px] w-[540px] h-[540px] bg-[#C1CA31] rounded-full"></div>
         <div className="absolute -bottom-[1450px] -right-[240px] w-[540px] h-[540px] bg-[#C1CA31] rounded-full"></div>
         <section className="relative h-[500px] overflow-hidden m-8 rounded-3xl">
-          <img src="../public/Rectangle 2.png" alt="Students studying" className="w-full h-full object-cover" />
+          <img src="./public/Rectangle 2.png" alt="Students studying" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
             <div className="flex items-center justify-between mx-auto w-full">
               <div className="w-2/3 text-white text-center m-8">

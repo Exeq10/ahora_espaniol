@@ -183,7 +183,7 @@ function ContactForm() {
         <button
           type="submit"
           disabled={state.submitting}
-          className="w-[50%] md:w-[25%] bg-teal-500 text-white py-2 px-4 rounded hover:bg-teal-600 font-semibold"
+          className="w-[50%] md:w-[35%] bg-teal-500 text-white py-2 px-4 rounded hover:bg-teal-600 font-semibold"
         >
           Send message
         </button>
