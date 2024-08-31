@@ -5,14 +5,12 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    theme: {
-      extend: {
-        fontFamily: {
-          'londrina-solid': ['"Londrina Solid"', 'cursive'],
-        },
-        fontWeight: {
-          'black': 900,
-        },
+    extend: {
+      fontFamily: {
+        'londrina-solid': ['"Londrina Solid"', 'cursive'],
+      },
+      fontWeight: {
+        'black': 900,
       },
     },
   },
