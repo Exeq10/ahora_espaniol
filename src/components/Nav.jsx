@@ -8,9 +8,9 @@ export default function Nav() {
             <Link to="/classes" className="text-gray-600 hover:text-gray-900 font-montserrat">Classes</Link>
             <Link to="/accomodation" className="text-gray-600 hover:text-gray-900 font-montserrat">Accomodation</Link>
             <Link to="#" className="text-gray-600 hover:text-gray-900 font-montserrat">SIELE</Link>
-            <button className="bg-[#43B3AF] text-white px-6 py-2 rounded-full hover:bg-[#3A9E9A] font-montserrat font-semibold">
+            <Link to="/contact" className="bg-[#43B3AF] text-white px-6 py-2 rounded-full hover:bg-[#3A9E9A] font-montserrat font-semibold">
               Contact Us
-            </button>
+            </Link>
           </div>
         </div>
       </nav>

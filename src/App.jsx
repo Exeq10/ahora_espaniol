@@ -11,6 +11,7 @@ import {lazy} from "react";
 const Landing = lazy(() => import("./pages/Landing"));
 const Accomodation = lazy(() => import("./pages/Accomodation"));
 const Classes = lazy(() => import("./pages/Classes"));
+ import Contact from "./pages/Contact";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -18,6 +19,7 @@ const router = createBrowserRouter(
       <Route path="/" element={<Landing />} />
       <Route path="/accomodation" element={<Accomodation />} />
       <Route path="/classes" element={<Classes />} />
+      <Route path="/contact" element={<Contact />} />
     </>,
   ),
 );
