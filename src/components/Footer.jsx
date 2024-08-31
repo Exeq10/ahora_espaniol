@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="container mx-auto px-4">
         <div className="flex flex-wrap justify-between">
           <div className="w-full md:w-1/4 mb-4 md:mb-0">
-            <img src="../public/logo 1.png" alt="Ahora Español Logo" />
+            <img src="/logo 1.png" alt="Ahora Español Logo" />
             <p className="text-sm font-montserrat">Learn Spanish in Mar del Plata</p>
           </div>
           <div className="w-full md:w-1/4 mb-4 md:mb-0">
