@@ -4,34 +4,32 @@ import { MapPin, Phone } from 'lucide-react'
 
 export default function Landing() {
   return (
-    <div className="bg-white min-h-screen font-montserrat">
+    
+    <div>
       <Nav />
-
-      <main>
-        <div className="absolute -bottom-[1020px] -left-[160px] w-[540px] h-[540px] bg-[#C1CA31] rounded-full"></div>
-        <div className="absolute -bottom-[1450px] -right-[240px] w-[540px] h-[540px] bg-[#C1CA31] rounded-full"></div>
+      <main className="bg-white min-h-screen font-montserrat">
+      <div className="absolute -bottom-[1020px] -left-[160px] w-[540px] h-[540px] bg-[#C1CA31] rounded-full" ></div>
         <section className="relative h-[500px] overflow-hidden m-8 rounded-3xl">
           <img src="../public/Rectangle 2.png" alt="Students studying" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
             <div className="flex items-center justify-between mx-auto w-full">
-              <div className="w-2/3 text-white text-center m-8">
-                <h1 className="font-londrina-solid font-black text-5xl mb-4">
+              <div className="w-full md:w-2/3 text-white text-center mx-4 md:mx-8 my-8">
+                <h1 className="font-londrina-solid font-black text-2xl sm:text-3xl md:text-5xl mb-4">
                   If you're looking to immerse yourself in Argentine culture while learning Spanish, Ahora Español in Mar del Plata is the ideal place
                 </h1>
-                <p className="mb-6 text-lg">
+                <p className="mb-6 text-sm sm:text-base md:text-lg">
                   Located in one of Argentina's most vibrant coastal cities, Ahora Español offers a unique blend of language learning and cultural immersion. Our experienced native teachers and interactive methods ensure you'll make rapid progress in your Spanish skills while enjoying the rich Argentine lifestyle.
                 </p>
-                <button className="bg-[#43B3AF] text-white px-8 py-3 rounded-full hover:bg-[#3A9E9A] font-semibold text-lg">
+                <button className="bg-[#43B3AF] text-white px-6 md:px-8 py-3 rounded-full hover:bg-[#3A9E9A] font-semibold text-sm sm:text-base md:text-lg">
                   Start now!
                 </button>
               </div>
-              <div className="w-1/3">
+              <div className="w-1/3 hidden md:block">
                 <img src="../public/Group 1.png" className="object-contain" alt="Group Image" />
               </div>
             </div>
           </div>
         </section>
-
 
         <section className="py-8 bg-[#B4E1DF]">
           <div className="container mx-auto px-4 text-center">
@@ -64,7 +62,7 @@ export default function Landing() {
                 </ul>
               </div>
             </div>
-            <div className="grid grid-cols-4 gap-4 pt-16">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 pt-16">
               <img src="../public/Rectangle 23.png" alt="School image 1" className="w-full h-40 object-cover rounded-lg" />
               <img src="../public/Rectangle 24.png" alt="School image 2" className="w-full h-40 object-cover rounded-lg" />
               <img src="../public/Rectangle 25.png" alt="School image 3" className="w-full h-40 object-cover rounded-lg" />
