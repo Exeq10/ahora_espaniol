@@ -46,7 +46,7 @@ export default function Accommodation() {
                   <div className="text-center">We suggest this opportunity. Stay with a local family to enhance your Spanish skills daily and learn about your hosts' customs and routines.</div>
                   <div className="text-center md:text-right">
                     <p>One bedroom - Breakfast - Evening meal: bathroom sharing</p>
-                    <p className="font-bold">7 nights cost: €280</p>
+                    <p className="font-bold">7 nights cost: €340/ USD 360</p>
                   </div>
                 </div>
               </div>
@@ -55,7 +55,7 @@ export default function Accommodation() {
                   <div className="font-bold text-center md:text-left">Hosts families no meal included</div>
                   <div className="text-center">This option is for students who prefer to have more independence and flexibility during their stay or to make their own food.</div>
                   <div className="text-center md:text-right">
-                    <p className="font-bold">7 nights per week cost: €190</p>
+                    <p className="font-bold">7 nights per week cost: €190/USD 210</p>
                   </div>
                 </div>
               </div>
