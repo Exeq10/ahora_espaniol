@@ -24,7 +24,7 @@ export default function Nav() {
         <div className="hidden md:flex space-x-4">
           <Link to="/classes" className="text-gray-600 hover:text-gray-900 font-montserrat">Classes</Link>
           <Link to="/accomodation" className="text-gray-600 hover:text-gray-900 font-montserrat">Accomodation</Link>
-          <Link to="#" className="text-gray-600 hover:text-gray-900 font-montserrat">SIELE</Link>
+          <Link to="/Siele" className="text-gray-600 hover:text-gray-900 font-montserrat">SIELE</Link>
           <Link to="/contact" className="bg-[#43B3AF] text-white px-6 py-2 rounded-full hover:bg-[#3A9E9A] font-montserrat font-semibold">
             Contact Us
           </Link>
