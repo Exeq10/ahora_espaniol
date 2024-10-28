@@ -13,7 +13,7 @@ function Contact() {
       <Nav />
 
       <main
-        className="bg-black h-auto w-full bg-cover bg-center flex justify-center md:flex-row flex-col  items-center p-5 md:p-10"
+        className="bg-black h-[830px] w-full bg-cover bg-center flex justify-center md:flex-row flex-col  items-center p-5 md:p-10"
         style={{
           backgroundImage: "url('/image.png')",
           backgroundPosition: "center",
