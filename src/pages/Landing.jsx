@@ -4,6 +4,7 @@ import { MapPin, Phone } from 'lucide-react'
 
 export default function Landing() {
   return (
+    
     <div className="bg-white min-h-screen font-montserrat">
       <Nav />
 
