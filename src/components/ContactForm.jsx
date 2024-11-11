@@ -1,173 +1,234 @@
-import { useForm, ValidationError } from "@formspree/react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import emailjs from "emailjs-com";
 import englishSpeakingCountries from "../hooks/countries";
-import { englishLearningPlans } from "../hooks/countries";
+import moment from 'moment';
 
 function ContactForm() {
-  const [state, handleSubmit] = useForm("xanwvgrg");
+  const [formData, setFormData] = useState({
+    name: "",
+    lastName: "",
+    dateOfBirth: "",
+    phone: "",
+    email: "",
+    nationality: "",
+    classType: "",
+    signUpFor: [],
+    courseDetails: "",
+    spanishLevel: "",
+    courseStartDate: "",
+    courseDuration: "",
+    accommodation: "",
+    accommodationFrom: "",
+    accommodationTo: "",
+    paymentMethod: "",
+    emergencyContact: "",
+    comments: "",
+    legal: false,
+  });
+
   const [errors, setErrors] = useState({});
   const [page, setPage] = useState(1);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isNextDisabled, setIsNextDisabled] = useState(true);
 
-  const validateForm = (formData) => {
+  useEffect(() => {
+    const newErrors = validateForm();
+    setErrors(newErrors);
+    setIsNextDisabled(Object.keys(newErrors).length > 0);
+  }, [formData, page]);
+
+  const validateForm = () => {
     const newErrors = {};
     const requiredFields = {
       1: ["name", "lastName", "dateOfBirth", "phone", "email", "nationality"],
-      2: ["classType","signUpFor","courseDetails"],
-      3: ["spanishLevel", "courseStartDate","courseDuration"],
+      2: ["classType", "signUpFor", "courseDetails"],
+      3: ["spanishLevel", "courseStartDate", "courseDuration"],
       4: ["accommodation"],
       5: ["paymentMethod", "legal"]
     };
-    
+
     requiredFields[page].forEach((field) => {
-      if (!formData.get(field)) newErrors[field] = `${field} is required`;
+      if (!formData[field] || (Array.isArray(formData[field]) && formData[field].length === 0)) {
+        newErrors[field] = `${field} is required`;
+      }
     });
+
+    // Accommodation validation for minimum days
+    if (formData.accommodationFrom && formData.accommodationTo) {
+      const start = moment(formData.accommodationFrom);
+      const end = moment(formData.accommodationTo);
+      const daysDifference = end.diff(start, 'days');
+      if (daysDifference < 6) {
+        newErrors.accommodationTo = "Accommodation should be booked for a minimum of 6 nights";
+      }
+    }
+
     return newErrors;
   };
 
   const handleCustomSubmit = async (event) => {
     event.preventDefault();
-    const formData = new FormData(event.target);
-    const newErrors = validateForm(formData);
+    const newErrors = validateForm();
 
-    console.log(newErrors);
-    
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
     } else {
       setErrors({});
-      await handleSubmit(event);
+      setIsSubmitting(true);
+
+      try {
+        await emailjs.send("service_ik4br7h", "template_uvqhmhq", formData, "OCGOUdtFQB5Ay6BIk");
+        setIsSubmitted(true);
+      } catch (error) {
+        console.error("Submission failed", error);
+      } finally {
+        setIsSubmitting(false);
+      }
+    }
+  };
+
+  const handleNextPage = () => {
+    const newErrors = validateForm();
+
+    if (Object.keys(newErrors).length === 0) {
+      setErrors({});
+      setPage(page + 1);
+    } else {
+      setErrors(newErrors);
+    }
+  };
+
+  const handleInputChange = (e) => {
+    const { name, value, type, checked } = e.target;
+
+    setFormData(
+
+      formData.name = name
+      
+    
+  
+  );
+    console.log(value);
+    
+
+ /*    setErrors((prevErrors) => ({ ...prevErrors, [name]: "" })); */
+
+  /*   if (type === "checkbox") {
+      setFormData((prevData) => ({
+        ...prevData,
+        [name]: checked,
+        ...(name === "signUpFor" && {
+          signUpFor: prevData.signUpFor.includes(value)
+            ? prevData.signUpFor.filter((item) => item !== value)
+            : [...prevData.signUpFor, value]
+        }),
+      }));
+    } else {
+      
+
+    console.log(value)
     }
   };
 
   const renderError = (field) => errors[field] && <p className="text-red-500">{errors[field]}</p>;
 
-  if (state.succeeded) {
+  if (isSubmitted) {
     return (
       <div className="py-16 flex flex-col justify-center items-center">
         <p className="text-3xl border px-3 rounded-full py-2 bg-green-600 text-white">✓</p>
         <p>Message sent</p>
         <p>Thank you for writing to us!</p>
       </div>
-    );
+    ); */
   }
 
-  const PageOne = () => (
-    <>
-      <Field label="Name" name="name" type="text" placeholder="Name" />
-      <Field label="Last Name" name="lastName" type="text" placeholder="Last Name" />
-      <Field label="Date of birth" name="dateOfBirth" type="date" />
-      <Field label="Phone" name="phone" type="tel" placeholder="Phone" />
-      <Field label="Email" name="email" type="email" placeholder="Email" />
-      <SelectField label="Nationality" name="nationality" options={englishSpeakingCountries} placeholder="--Nationality--" />
-    </>
-  );
 
-  const PageTwo = () => (
-    <>
-      <CheckboxGroup label="Sign up for:" name="signUpFor" options={["Spanish Classes", "Accommodation", "Airport Transfer"]} />
-      <SelectField label="Class Type" name="classType" options={["Small Groups", "Private Classes"]} placeholder="Select class type" />
-      <SelectField label="Program you're interested in" name="courseDetails" options={["2 hours per week", "6 hours per week (two consecutive days from Mondays to Fridays)","9 hours per week (three consecutive days from Mondays to Fridays)","Intensive 15 hours per week (Monday to Friday)","Intensive 15 hours per week and 5 hours one-on-one private lessons with native teacher"]} placeholder="--Select Course Details--" />
-      <SelectField label="Private Classes" name="privateClasses" options={["2 hours", "3 hours", "4 hours", "5 hours", "6 hours", "9 hours", "More"]} placeholder="--Select Private Class Hours--" />
-    </>
-  );
+
+
 
   const PageThree = () => (
     <>
-      <SelectField label="My Spanish level" name="spanishLevel" options={["A1", "A2", "B1.1", "B1.2", "B2.1", "B2.2", "C1", "C2"]} placeholder="Select your Spanish level" />
-      <TextArea label="Languages you speak" name="languages" placeholder="Indicate mother tongue and level for other languages" />
-      <Field label="Course Start Date" name="courseStartDate" type="date" placeholder="Group classes start every Monday" />
-      <SelectField label="Course Duration" name="courseDuration" options={["1 week", "2 weeks", "3 weeks", "4 weeks"]} placeholder="--Select Duration--" />
+      <SelectField label="My Spanish level" name="spanishLevel" options={["A1", "A2", "B1.1", "B1.2", "B2.1", "B2.2", "C1", "C2"]} placeholder="Select your Spanish level" value={formData.spanishLevel} onChange={handleInputChange} />
+      <TextArea label="Languages you speak" name="languages" placeholder="Indicate mother tongue and level for other languages" value={formData.languages} onChange={handleInputChange} />
+      <Field label="Course Start Date" name="courseStartDate" type="date" placeholder="Group classes start every Monday" value={formData.courseStartDate} onChange={handleInputChange} />
+      <SelectField label="Course Duration" name="courseDuration" options={["1 week", "2 weeks", "3 weeks", "4 weeks"]} placeholder="--Select Duration--" value={formData.courseDuration} onChange={handleInputChange} />
     </>
   );
 
   const PageFour = () => (
     <>
-      <SelectField label="Do you wish to book accommodation through our school?" name="accommodation" options={["Yes, Homestay with a local family (breakfast and dinner included)", "Yes, Homestay with a local family (no meals included)", "I don't need accommodation"]} placeholder="--Select an option--" />
-      <Field label="Accommodation dates start (minimum 6 nights)" name="accommodationFrom" type="date" />
-      <Field label="Accommodation dates finish" name="accommodationTo" type="date" />
+      <SelectField label="Do you wish to book accommodation through our school?" name="accommodation" options={["Yes, Homestay with a local family (breakfast and dinner included)", "Yes, Homestay with a local family (no meals included)", "I don't need accommodation"]} placeholder="--Select an option--" value={formData.accommodation} onChange={handleInputChange} />
+      <Field label="Accommodation dates start (minimum 6 nights)" name="accommodationFrom" type="date" value={formData.accommodationFrom} onChange={handleInputChange} />
+      <Field label="Accommodation dates finish" name="accommodationTo" type="date" value={formData.accommodationTo} onChange={handleInputChange} />
     </>
   );
 
   const PageFive = () => (
     <>
-      <SelectField label="Payment method (Homestays accept only cash payment upon arrival)" name="paymentMethod" options={["Bank transfer (Western Union)", "Cash upon arrival (USD/ Euro/ Real)", "Credit card"]} placeholder="--Select Payment Method--" />
-      <Field label="Emergency contact (Name - Relationship to the student - Phone number - Email)" name="emergencyContact" type="text" />
-      <TextArea label="Additional Comments" name="comments" placeholder="If you have any additional questions or comments, please indicate them here" />
-
-      <CheckboxGroup label="Have you read the Terms and Conditions?" name="legal" options={[`Yes, I have read and agree to the Terms and Conditions of Ahora Español`
-]} />
+      <SelectField label="Payment method (Homestays accept only cash payment upon arrival)" name="paymentMethod" options={["Bank transfer (Western Union)", "Cash upon arrival (USD/ Euro/ Real)", "Credit card"]} placeholder="--Select Payment Method--" value={formData.paymentMethod} onChange={handleInputChange} />
+      <Field label="Emergency contact (Name - Relationship to the student - Phone number - Email)" name="emergencyContact" type="text" value={formData.emergencyContact} onChange={handleInputChange} />
+      <TextArea label="Any comments?" name="comments" placeholder="Your comments..." value={formData.comments} onChange={handleInputChange} />
+      <div className="flex items-center mt-3">
+        <input
+          type="checkbox"
+          name="legal"
+          checked={formData.legal}
+          onChange={handleInputChange}
+        />
+        <label className="ml-2">
+          I accept the legal information and policies
+        </label>
+      </div>
+      {renderError("legal")}
     </>
   );
 
-  // eslint-disable-next-line react/prop-types
-  const Field = ({ label, name, type = "text", placeholder }) => (
-    <div className="flex flex-col mb-4">
-      <label htmlFor={name} className="font-semibold mb-1">{label}</label>
-      <input type={type} name={name} id={name} className="border py-2 px-4 rounded" placeholder={placeholder} />
-      {renderError(name)}
-      <ValidationError prefix={label} field={name} errors={state.errors} />
-    </div>
-  );
-
-  const SelectField = ({ label, name, options, placeholder }) => (
-    <div className="flex flex-col mb-4">
-      <label htmlFor={name} className="font-semibold mb-1">{label}</label>
-      <select name={name} id={name} className="border py-2 px-4 rounded">
-        <option value="" disabled>{placeholder}</option>
-        {options.map((option, index) => (
-          <option key={index} value={option}>{option}</option>
-        ))}
-      </select>
-      {renderError(name)}
-      <ValidationError prefix={label} field={name} errors={state.errors} />
-    </div>
-  );
-
-  const TextArea = ({ label, name, placeholder }) => (
-    <div className="flex flex-col mb-4">
-      <label htmlFor={name} className="font-semibold mb-1">{label}</label>
-      <textarea name={name} id={name} className="border py-2 px-4 rounded w-full h-24" placeholder={placeholder}></textarea>
-      {renderError(name)}
-    </div>
-  );
-
-  const CheckboxGroup = ({ label, name, options }) => (
-    <div className="flex flex-col mb-4">
-      <label className="font-semibold mb-1">{label}</label>
-      <div className="flex gap-4">
-        {options.map((option, index) => (
-          <label key={index}>
-            <input type="checkbox" name={name} value={option} /> {option}
-          </label>
-        ))}
-      </div>
-    </div>
-  );
-
-  const renderPage = () => {
-    switch (page) {
-      case 1: return <PageOne />;
-      case 2: return <PageTwo />;
-      case 3: return <PageThree />;
-      case 4: return <PageFour />;
-      case 5: return <PageFive />;
-      default: return <PageOne />;
-    }
-  };
-
   return (
-    <form onSubmit={handleCustomSubmit} className="space-y-8">
-      {renderPage()}
-      <div className="flex justify-between">
-        {page > 1 && <button type="button" onClick={() => setPage(page - 1)} className="py-2 px-4 bg-gray-200 rounded">Previous</button>}
+    <div className="container mx-auto py-8">
+    <form onSubmit={handleCustomSubmit}>
+      {page === 1 && <PageOne />}
+      {page === 2 && <PageTwo />}
+      {page === 3 && <PageThree />}
+      {page === 4 && <PageFour />}
+      {page === 5 && <PageFive />}
+
+      <div className="flex justify-between mt-4">
+        {page > 1 && (
+          <button
+            type="button"
+            onClick={() => setPage(page - 1)}
+            className="bg-gray-300 px-4 py-2 rounded"
+          >
+            Previous
+          </button>
+        )}
         {page < 5 ? (
-          <button type="button" onClick={() => setPage(page + 1)} className="py-2 px-4 bg-blue-500 text-white rounded">Next</button>
+          <button
+            type="button"
+            onClick={handleNextPage}
+            disabled={isNextDisabled}
+            className={`bg-blue-500 text-white px-4 py-2 rounded ${isNextDisabled ? 'bg-slate-200' : ''}`}
+          >
+            Next
+          </button>
         ) : (
-          <button type="submit" className="py-2 px-4 bg-teal-500 text-white rounded">Send Message</button>
+          <button
+            type="submit"
+            className={`bg-green-500 text-white px-4 py-2 rounded ${isNextDisabled ? 'bg-slate-200' : ''}`}
+            disabled={isNextDisabled || isSubmitting}
+          >
+            {isSubmitting ? "Submitting..." : "Submit"}
+          </button>
         )}
       </div>
     </form>
-  );
+  </div>
+);
 }
+
+
+
+
 
 export default ContactForm;
