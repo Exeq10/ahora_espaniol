@@ -39,36 +39,10 @@ const englishSpeakingCountries = [
 
 
   const englishLearningPlans = [
-    "Beginner English Course",
-    "Intermediate English Course",
-    "Advanced English Course",
-    "Business English Program",
-    "English for Travel",
-    "IELTS Preparation Course",
-    "TOEFL Preparation Course",
-    "English Conversation Classes",
-    "English Grammar Bootcamp",
-    "Academic English Program",
-    "English for Specific Purposes (ESP)",
-    "English for Kids",
-    "English for Teens",
-    "English Pronunciation Workshop",
-    "English Writing Skills Course",
-    "English Reading Comprehension Course",
-    "English Listening and Speaking Course",
-    "Online English Tutoring",
-    "English Language Immersion Program",
-    "English Vocabulary Builder",
-    "English for Healthcare Professionals",
-    "English for IT Professionals",
-    "Cambridge English Exam Preparation",
-    "TOEIC Preparation Course",
-    "English for Customer Service",
-    "English for Hospitality and Tourism",
-    "Intensive English Program",
-    "One-on-One English Coaching",
-    "General English Course",
-    "English for Academic Purposes (EAP)"
+    "Private -  2 hours/week",
+    "Private -  10 hours/week",
+    "Private -  20 hours/week",
+
   ];
   
 
